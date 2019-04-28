@@ -1,0 +1,169 @@
+@font-face {
+  font-family: "Roboto";
+  src: url("./fonts/Roboto_400_normal.ttf");
+}
+* {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+body {
+  font-family: "Roboto";
+  font-size: 16px;
+  width: 100vw;
+  height: 100vh;
+}
+
+.main {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(rgba(0, 17, 16, 0.8), rgba(0, 17, 16, 0.8)),
+    url(./image/laptop.jpg);
+  background-size: cover;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 70px;
+  width: 100%;
+  background-color: orangered;
+  color: rgb(0, 17, 16);
+}
+nav .navContainer {
+  width: 80%;
+  height: 100%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 5px;
+  padding-right: 15px;
+}
+nav h1 {
+  font-size: 2rem;
+  color: #fff;
+}
+
+nav h1 span {
+  color: rgb(0, 17, 16);
+}
+
+nav ul {
+  display: flex;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+nav ul li {
+  height: 100%;
+  position: relative;
+}
+nav ul li:not(:last-child) {
+  padding-right: 15px;
+}
+
+nav ul li::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-bottom: solid #000 1px;
+  border-top: solid #000 1px;
+  transition: 0.3s ease-in-out;
+  opacity: 0;
+  z-index: -2;
+}
+nav ul li:hover::before {
+  transform: scaleY(2);
+  opacity: 1;
+  color: #fff;
+}
+a:hover {
+  color: #fff;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+
+  transition: 0.3s ease-in-out;
+}
+
+.smallNav {
+  position: fixed;
+  top: 70px;
+  left: 0;
+  z-index: 1000;
+  width: 100%;
+  height: 100%;
+}
+
+.smallNavContainer {
+  width: 100%;
+  height: 40%;
+  background: orangered;
+  opacity: 1;
+}
+
+.smallNav ul {
+  width: 80%;
+  height: 100%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+.smallNav ul li {
+  height: 100%;
+}
+.smallNav ul li:hover {
+  background: #000;
+}
+
+.container h3 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  font-size: 02rem;
+  padding: 15px;
+  background: orangered;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+i {
+  opacity: 0;
+}
+
+@media screen and (max-width: 680px) {
+  nav ul {
+    display: none;
+  }
+  i {
+    opacity: 1;
+  }
+
+  .container h3 {
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .container h3 {
+    font-size: 1.2rem;
+  }
+}
