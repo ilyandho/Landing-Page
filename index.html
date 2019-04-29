@@ -17,17 +17,17 @@
     <div class="main">
       <nav>
         <div class="navContainer">
-          <h1>
-            <a href="#">Landing<span>Page</span></a>
+          <h1 class="logo">
+            <a href="#"> Landing<span>Page</span></a>
           </h1>
-          <div id="space"></div>
-          <div class="menu">
+          <label for="toggle">&#9776;</label>
+          <input type="checkbox" id="toggle" />
+          <!--<div class="menu">
             <i
               id="menu"
               class="fas fa-bars"
               style="color:#fff; font-size:2rem;"
-            ></i>
-          </div>
+            ></i> -->
           <ul>
             <li><a href="#about">About</a></li>
             <li><a href="#services">Services</a></li>
@@ -35,18 +35,29 @@
           </ul>
         </div>
       </nav>
-      <div class="smallNav">
-        <div class="smallNavContainer">
-          <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-        </div>
-      </div>
+      <div class="bodyBlur"></div>
+
       <div class="container">
         <h3>You landed Here</h3>
       </div>
     </div>
+
+    <script>
+      const body = document.querySelector(".bodyBlur");
+      const nav = document.querySelector("ul");
+      const tog = document.querySelector("#toggle");
+      tog.addEventListener("change", display);
+
+      function display(e) {
+        const checked = e.target.checked;
+        if (checked) {
+          nav.classList.add("displayNav");
+          body.classList.add("blur");
+        } else {
+          nav.classList.remove("displayNav");
+          body.classList.remove("blur");
+        }
+      }
+    </script>
   </body>
 </html>
