@@ -136,7 +136,7 @@ nav li a:hover {
     z-index: 200;
   }
 
-  nav ul a::before {
+  nav ul a::after {
     z-index: -1;
     content: "";
     position: absolute;
@@ -148,7 +148,7 @@ nav li a:hover {
     opacity: 0;
     transition: 0.3s ease-in;
   }
-  nav ul a:hover::before {
+  nav ul a:hover::after {
     width: 100%;
     opacity: 1;
   }
